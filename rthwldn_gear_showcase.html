@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rthwldn // GEAR — Technika & Studio Setup</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            alza: {
+              DEFAULT: '#009444',
+              hover: '#007a38',
+              bright: '#22c55e',
+              glow: 'rgba(34, 197, 94, 0.18)'
+            },
+            dark: {
+              bg: '#09090b',
+              card: '#121216',
+              cardHover: '#181820',
+              border: '#22222a',
+              input: '#16161d'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #22222a;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #009444;
+    }
+    /* Background tech grid */
+    .bg-grid {
+      background-image: radial-gradient(rgba(34, 197, 94, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-dark-bg text-gray-100 font-sans antialiased min-h-screen flex flex-col selection:bg-alza selection:text-white border-t-2 border-alza bg-grid">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-dark-border transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group shrink-0">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-alza via-emerald-600 to-teal-700 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-alza/20 group-hover:scale-105 transition-transform duration-300">
+          R
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-xl tracking-wider text-white">rthwldn</span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-alza/20 text-alza border border-alza/30 uppercase tracking-widest">GEAR</span>
+          </div>
+          <p class="text-xs text-gray-400 font-mono hidden sm:block">Kompletní studio setup & technika</p>
+        </div>
+      </a>
+
+      <!-- Header Social & External Links -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://youtube.com/@rthwldn" target="_blank" rel="noopener noreferrer" 
+           class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-dark-card border border-dark-border text-gray-300 hover:text-white hover:border-red-500/50 hover:bg-red-950/20 transition-all duration-200">
+          <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i>
+          <span class="hidden md:inline">YouTube</span>
+        </a>
+
+        <a href="https://www.forendors.cz" target="_blank" rel="noopener noreferrer" 
+           class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-dark-card border border-dark-border text-gray-300 hover:text-white hover:border-orange-500/50 hover:bg-orange-950/20 transition-all duration-200">
+          <i data-lucide="heart" class="w-4 h-4 text-orange-400"></i>
+          <span class="hidden md:inline">Forendors</span>
+        </a>
+
+        <a href="https://ustories.app" target="_blank" rel="noopener noreferrer" 
+           class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-950/50 to-indigo-950/50 border border-purple-500/30 text-purple-300 hover:text-white hover:border-purple-400 transition-all duration-200">
+          <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+          <span>uStories</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-10 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-alza/10 border border-alza/30 text-alza text-xs font-mono mb-4">
+      <span class="w-2 h-2 rounded-full bg-alza animate-pulse"></span>
+      Oficiální technika kanálu // 33 produktů
+    </div>
+    
+    <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
+      Technické zázemí <span class="text-transparent bg-clip-text bg-gradient-to-r from-alza-bright via-emerald-400 to-teal-300">rthwldn</span>
+    </h1>
+    
+    <p class="max-w-2xl mx-auto text-gray-400 text-sm sm:text-base leading-relaxed">
+      Vybraný hardware pro tvorbu videí, střižnu, vývoj i gaming. Kliknutím na produkt přejdete přímo na detail na <strong class="text-white">Alza.cz</strong>.
+    </p>
+  </section>
+
+  <!-- FILTER & SEARCH CONTROLS -->
+  <section class="sticky top-20 z-30 bg-dark-bg/95 backdrop-blur-md border-y border-dark-border py-4 mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <!-- Category Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar" id="categoryContainer">
+        <!-- Dynamic JS categories -->
+      </div>
+
+      <!-- Realtime Search Field -->
+      <div class="relative w-full md:w-80 shrink-0">
+        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input type="text" id="searchInput" placeholder="Hledat produkt, značku, kategorii..." 
+               class="w-full pl-10 pr-9 py-2 bg-dark-card border border-dark-border rounded-xl text-xs text-gray-200 placeholder-gray-500 focus:outline-none focus:border-alza focus:ring-1 focus:ring-alza transition-all duration-200" />
+        <button id="clearSearchBtn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN PRODUCT LIST -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full">
+    
+    <!-- Counter Bar -->
+    <div class="flex items-center justify-between mb-6">
+      <div class="text-xs font-mono text-gray-400 flex items-center gap-2">
+        <i data-lucide="boxes" class="w-4 h-4 text-alza"></i>
+        <span>Zobrazeno <strong id="itemCount" class="text-white">0</strong> z <strong id="totalCount" class="text-white">33</strong> položek</span>
+      </div>
+      <div class="text-xs text-gray-400 hidden sm:flex items-center gap-1.5 font-mono">
+        <i data-lucide="link" class="w-3.5 h-3.5 text-alza"></i>
+        <span>Affiliate Tag: <code class="text-emerald-400 bg-black/60 px-2 py-0.5 rounded border border-dark-border" id="tagDisplay">?idp=9530&banner_id=44903</code></span>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Cards populated via JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-20 bg-dark-card/40 rounded-2xl border border-dashed border-dark-border">
+      <i data-lucide="search-x" class="w-12 h-12 text-gray-600 mx-auto mb-3"></i>
+      <h3 class="text-lg font-bold text-white mb-1">Žádné produkty nenalezeny</h3>
+      <p class="text-xs text-gray-400 mb-4">Zkuste upravit vyhledávání nebo přepnout kategorii.</p>
+      <button onclick="resetFilters()" class="px-4 py-2 bg-dark-border hover:bg-gray-800 text-white rounded-xl text-xs font-semibold transition-colors">
+        Vynulovat filtry
+      </button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto border-t border-dark-border bg-dark-card/60 pt-10 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-dark-border/60">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-extrabold text-white tracking-wide">rthwldn // GEAR SHOWCASE</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Seznam hardwaru, audia, výpočetní techniky a příslušenství kanálu rthwldn (Adam Jícha).
+          </p>
+        </div>
+
+        <!-- Affiliate Disclosure -->
+        <div class="md:col-span-2 bg-dark-bg/80 p-4 rounded-xl border border-dark-border">
+          <div class="flex items-center gap-2 text-xs font-bold text-alza mb-1.5">
+            <i data-lucide="info" class="w-4 h-4"></i>
+            <span>Informace o partnerských odkazech (Alza Affiliate)</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Odkazy směřující na Alza.cz na tomto webu jsou opatřeny affiliate parametrem (<code>?idp=9530&banner_id=44903</code>). Pokud si produkt zakoupíte přes tento odkaz, podpoříte tvorbu kanálu <strong>rthwldn</strong> bez jakéhokoliv navýšení vaší nákupní ceny. Děkujeme za podporu!
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div>
+          © 2026 <strong>rthwldn</strong>. Všechna práva vyhrazena.
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <button onclick="openAdminModal()" class="hover:text-alza flex items-center gap-1.5 transition-colors font-mono">
+            <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
+            <span>Správa & Affiliate Parametry</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL: ADMIN / AFFILIATE SETTINGS -->
+  <div id="adminModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-dark-card border border-dark-border rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-dark-border flex items-center justify-between bg-dark-bg">
+        <div class="flex items-center gap-2.5">
+          <div class="p-2 rounded-lg bg-alza/20 text-alza">
+            <i data-lucide="settings" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Nastavení & Správa odkazů</h3>
+            <p class="text-xs text-gray-400">Úprava affiliate parametrů a náhled vygenerovaných URL</p>
+          </div>
+        </div>
+        <button onclick="closeAdminModal()" class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-border">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-5 overflow-y-auto space-y-6 flex-grow">
+        
+        <!-- Affiliate Parameters Setting -->
+        <div class="bg-dark-bg p-4 rounded-xl border border-dark-border">
+          <label class="block text-xs font-bold text-white mb-1">Přesný Alza Affiliate kód / parametry</label>
+          <p class="text-[11px] text-gray-400 mb-2">Při vyhledávání se automaticky použije kód <code>&idp=9530&banner_id=44903</code>, u přímých URL bez parametru se vloží <code>?idp=9530&banner_id=44903</code>.</p>
+          <div class="flex gap-2">
+            <input type="text" id="affiliateTagInput" placeholder="?idp=9530&banner_id=44903" 
+                   class="flex-grow px-3 py-2 bg-dark-card border border-dark-border rounded-xl text-xs text-emerald-400 font-mono focus:border-alza focus:outline-none">
+            <button onclick="saveAffiliateTag()" class="px-4 py-2 bg-alza hover:bg-alza-hover text-white text-xs font-bold rounded-xl transition-colors">
+              Uložit kód
+            </button>
+          </div>
+        </div>
+
+        <!-- Sample URL Preview -->
+        <div class="bg-dark-bg p-4 rounded-xl border border-dark-border">
+          <h4 class="text-xs font-mono font-bold text-gray-300 mb-2 uppercase tracking-wider">Testovací náhled URL (Ukázka)</h4>
+          <p class="text-[11px] text-gray-400 mb-2">Odkaz pro vyhledávání Mac Studio M4 MAX s vašimi parametry:</p>
+          <div class="p-2.5 bg-black/80 rounded-lg font-mono text-[11px] text-emerald-400 break-all border border-dark-border select-all" id="urlPreview">
+            https://www.alza.cz/search.htm?exps=Mac+Studio+M4+MAX&idp=9530&banner_id=44903
+          </div>
+        </div>
+
+        <!-- Add Item Form -->
+        <div class="bg-dark-bg p-4 rounded-xl border border-dark-border">
+          <h4 class="text-xs font-mono font-bold text-gray-300 mb-3 uppercase tracking-wider">Přidat novou položku</h4>
+          <form id="addItemForm" onsubmit="handleAddItem(event)" class="space-y-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-400 mb-1">Název produktu</label>
+                <input type="text" id="newTitle" placeholder="např. Keychron Q1 Pro" required 
+                       class="w-full px-3 py-1.5 bg-dark-card border border-dark-border rounded-lg text-xs text-white focus:border-alza focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-400 mb-1">Kategorie</label>
+                <select id="newCategory" required class="w-full px-3 py-1.5 bg-dark-card border border-dark-border rounded-lg text-xs text-white focus:border-alza focus:outline-none">
+                  <option value="PC & Workstation">PC & Workstation</option>
+                  <option value="Monitory & Periferie">Monitory & Periferie</option>
+                  <option value="Audio & Streaming">Audio & Streaming</option>
+                  <option value="Telefony & Wearables">Telefony & Wearables</option>
+                  <option value="Konzole & TV">Konzole & TV</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs text-gray-400 mb-1">Popis / Využití v setupu</label>
+              <input type="text" id="newNote" placeholder="např. Sekundární klávesnice pro psaní" required 
+                     class="w-full px-3 py-1.5 bg-dark-card border border-dark-border rounded-lg text-xs text-white focus:border-alza focus:outline-none">
+            </div>
+
+            <div>
+              <label class="block text-xs text-gray-400 mb-1">Přímé URL na Alzu (volitelné – jinak vyhledává automaticky)</label>
+              <input type="url" id="newUrl" placeholder="https://www.alza.cz/..." 
+                     class="w-full px-3 py-1.5 bg-dark-card border border-dark-border rounded-lg text-xs text-white focus:border-alza focus:outline-none">
+            </div>
+
+            <button type="submit" class="w-full py-2 bg-alza hover:bg-alza-hover text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              Přidat produkt do seznamu
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-dark-border bg-dark-bg flex items-center justify-between">
+        <button onclick="resetToDefaultData()" class="text-xs text-red-400 hover:text-red-300 font-medium">
+          Obnovit výchozích 33 produktů
+        </button>
+        <button onclick="closeAdminModal()" class="px-4 py-2 bg-dark-border hover:bg-gray-800 text-white rounded-xl text-xs font-medium">
+          Zavřít
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-alza text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+    <span id="toastMsg" class="text-xs font-medium">Akce proběhla úspěšně!</span>
+  </div>
+
+  <!-- APPLICATION LOGIC -->
+  <script>
+    /* ====================================================================
+       AFFILIATE SYSTEM CONFIGURATION
+       PŘESNÉ PARAMETRY UŽIVATELE: "?idp=9530&banner_id=44903"
+       ==================================================================== */
+    let AFFILIATE_PARAMS = "?idp=9530&banner_id=44903";
+
+    // VŠECHNY 33 PRODUKTY BEZ CEN A BEZ SKLADOVÝCH ZÁSOB
+    const DEFAULT_GEAR_ITEMS = [
+      // --- PC & WORKSTATION (6) ---
+      {
+        id: "mac-studio-m4-max",
+        title: "Mac Studio M4 MAX",
+        category: "PC & Workstation",
+        icon: "cpu",
+        badge: "Střižna",
+        note: "Hlavní pracovní stanice pro 8K střih videa, rendering a lokální AI modely v DaVinci Resolve.",
+        colorGradient: "from-blue-600/20 to-purple-600/20"
+      },
+      {
+        id: "macbook-pro-14-m5",
+        title: "MacBook Pro 14\" M5 CZ 2025 Vesmírně černý",
+        category: "PC & Workstation",
+        icon: "laptop",
+        badge: "Mobilní Mac",
+        note: "Mobilní pracovní stanice pro tvorbu obsahu, střih a produktivitu na cestách.",
+        colorGradient: "from-gray-600/20 to-slate-800/20"
+      },
+      {
+        id: "asus-rtx-5070-ti",
+        title: "ASUS PRIME GeForce RTX 5070 Ti O16G",
+        category: "PC & Workstation",
+        icon: "zap",
+        badge: "GPU",
+        note: "Grafická karta pro lokální generativní AI (ComfyUI), 4K gaming a akcelerované renderování.",
+        colorGradient: "from-emerald-600/20 to-teal-800/20"
+      },
+      {
+        id: "intel-core-ultra-7-265k",
+        title: "Intel Core Ultra 7 265K",
+        category: "PC & Workstation",
+        icon: "cpu",
+        badge: "CPU",
+        note: "Procesor hlavní herní PC sestavy a Windows pracovního prostředí.",
+        colorGradient: "from-blue-600/20 to-cyan-800/20"
+      },
+      {
+        id: "kingston-fury-64gb-ddr5",
+        title: "Kingston FURY 64GB KIT DDR5 6000MT/s CL30 Beast Black EXPO",
+        category: "PC & Workstation",
+        icon: "database",
+        badge: "RAM",
+        note: "Rychlá paměť RAM s nízkou latencí pro stabilní provoz náročného multitaskingu.",
+        colorGradient: "from-amber-600/20 to-orange-800/20"
+      },
+      {
+        id: "asus-tuf-gt502-horizon",
+        title: "ASUS TUF GAMING GT502 HORIZON TG ARGB BLACK",
+        category: "PC & Workstation",
+        icon: "box",
+        badge: "Case",
+        note: "Dvoukomorová skříň s tvrzeným panoramatickým sklem pro čistý layout a chlazení.",
+        colorGradient: "from-stone-600/20 to-neutral-800/20"
+      },
+
+      // --- MONITORY & PERIFERIE (8) ---
+      {
+        id: "apple-studio-display-27",
+        title: "27\" Apple Studio Display - Standard Glass",
+        category: "Monitory & Periferie",
+        icon: "monitor",
+        badge: "5K Retina",
+        note: "5K Retina referenční monitor s přesným podáním barev pro macOS střihové prostředí.",
+        colorGradient: "from-purple-600/20 to-indigo-800/20"
+      },
+      {
+        id: "gigabyte-aorus-fo32u2p",
+        title: "32\" GIGABYTE AORUS FO32U2P",
+        category: "Monitory & Periferie",
+        icon: "tv",
+        badge: "4K QD-OLED",
+        note: "32\" 4K QD-OLED herní a pracovní monitor s obnovovací frekvencí 240Hz a DP 2.1.",
+        colorGradient: "from-rose-600/20 to-pink-800/20"
+      },
+      {
+        id: "aoc-q27g41zdf-27",
+        title: "27\" AOC Q27G41ZDF",
+        category: "Monitory & Periferie",
+        icon: "monitor-play",
+        badge: "QHD Monitor",
+        note: "Sekundární 27\" QHD monitor pro chat, náhledy streamu a studiovou kontrolu.",
+        colorGradient: "from-sky-600/20 to-blue-800/20"
+      },
+      {
+        id: "msi-mpg-mt201drg-arm",
+        title: "MSI MPG MT201DRG 17\"- 35\"",
+        category: "Monitory & Periferie",
+        icon: "move",
+        badge: "Držák",
+        note: "Robustní stolní rameno pro variabilní nastavení pozice hlavního i vedlejšího monitoru.",
+        colorGradient: "from-red-600/20 to-neutral-800/20"
+      },
+      {
+        id: "apple-magic-keyboard-2024",
+        title: "Apple Magic Keyboard 2024 s Touch ID - CZ",
+        category: "Monitory & Periferie",
+        icon: "keyboard",
+        badge: "Mac Klávesnice",
+        note: "Klávesnice k macOS setupu s biometrickým Touch ID pro okamžité odemykání Macu.",
+        colorGradient: "from-gray-600/20 to-slate-700/20"
+      },
+      {
+        id: "apple-magic-trackpad-2024",
+        title: "Apple Magic Trackpad 2024 - Bílý",
+        category: "Monitory & Periferie",
+        icon: "square",
+        badge: "Trackpad",
+        note: "Trackpad pro plynulá gesta a přesné procházení časové osy při střihu videí.",
+        colorGradient: "from-slate-600/20 to-zinc-800/20"
+      },
+      {
+        id: "asus-rog-azoth-extreme",
+        title: "ASUS ROG Azoth Extreme (ROG NX Snow / PBT) - US",
+        category: "Monitory & Periferie",
+        icon: "keyboard",
+        badge: "Mechanická PC",
+        note: "Custom mechanická klávesnice s OLED displejem a hliníkovým šasi pro PC setup.",
+        colorGradient: "from-red-600/20 to-rose-900/20"
+      },
+      {
+        id: "steelseries-rival-pro-wireless",
+        title: "SteelSeries Rival Pro Wireless Black",
+        category: "Monitory & Periferie",
+        icon: "mouse",
+        badge: "Herní myš",
+        note: "Bezdrátová ultra lehká myš s precizním snímačem pro hraní a produktivitu.",
+        colorGradient: "from-amber-600/20 to-yellow-800/20"
+      },
+
+      // --- AUDIO & STREAMING (9) ---
+      {
+        id: "shure-sm7db",
+        title: "Shure SM7dB",
+        category: "Audio & Streaming",
+        icon: "mic",
+        badge: "Mikrofon",
+        note: "Hlavní studiový dynamický mikrofon s vestavěným prémiovým předzesilovačem.",
+        colorGradient: "from-emerald-600/20 to-green-900/20"
+      },
+      {
+        id: "rodecaster-pro-ii",
+        title: "RODECaster Pro II",
+        category: "Audio & Streaming",
+        icon: "sliders",
+        badge: "Audio Console",
+        note: "Produkční audio konzole a zvukové rozhraní pro správu mikrofonů, chatu a efektů.",
+        colorGradient: "from-amber-600/20 to-red-800/20"
+      },
+      {
+        id: "edifier-mr5-black",
+        title: "EDIFIER MR5 černé",
+        category: "Audio & Streaming",
+        icon: "speaker",
+        badge: "Monitory",
+        note: "Studiové referenční monitory s vyrovnanou frekvenční charakteristikou pro zvukařinu.",
+        colorGradient: "from-neutral-600/20 to-stone-800/20"
+      },
+      {
+        id: "elgato-wave-mic-arm-mk2",
+        title: "Elgato Wave Mic Arm High Rise MK.2",
+        category: "Audio & Streaming",
+        icon: "pen-tool",
+        badge: "Rameno",
+        note: "Vysokoprofilové mikrofonní rameno pro montáž Shure SM7dB nad klávesnici.",
+        colorGradient: "from-blue-600/20 to-indigo-800/20"
+      },
+      {
+        id: "elgato-stream-deck-plus",
+        title: "Elgato Stream Deck +",
+        category: "Audio & Streaming",
+        icon: "layout-grid",
+        badge: "Kontrolér",
+        note: "Ovládací pult s otočnými enkodéry a dotykovým displejem pro řízení zvuku a OBS.",
+        colorGradient: "from-indigo-600/20 to-purple-800/20"
+      },
+      {
+        id: "elgato-prompter",
+        title: "Elgato Prompter",
+        category: "Audio & Streaming",
+        icon: "eye",
+        badge: "Teleprompter",
+        note: "Čtecí zařízení s integrovaným displejem pro přímou interakci s kamerou a diváky.",
+        colorGradient: "from-teal-600/20 to-cyan-800/20"
+      },
+      {
+        id: "elgato-cam-link-4k",
+        title: "Elgato Cam Link 4K",
+        category: "Audio & Streaming",
+        icon: "camera",
+        badge: "4K Cam Link",
+        note: "Převodník pro připojení zrcadlovky/bezzrcadlovky jako ultravysokokvalitní webkamery.",
+        colorGradient: "from-blue-600/20 to-teal-800/20"
+      },
+      {
+        id: "elgato-4k-pro",
+        title: "Elgato 4K Pro",
+        category: "Audio & Streaming",
+        icon: "video",
+        badge: "PCIe Capture",
+        note: "Interní PCIe zachytávací karta pro nahrávání 4K60 HDR10 videa z konzolí a PC.",
+        colorGradient: "from-purple-600/20 to-violet-900/20"
+      },
+      {
+        id: "elgato-game-capture-4k-x",
+        title: "Elgato Game Capture 4K X",
+        category: "Audio & Streaming",
+        icon: "radio",
+        badge: "USB-C Capture",
+        note: "Externí USB-C zachytávací karta s HDMI 2.1 pro záznam z handheldů a konzolí.",
+        colorGradient: "from-cyan-600/20 to-blue-900/20"
+      },
+
+      // --- TELEFONY & WEARABLES (6) ---
+      {
+        id: "iphone-17-pro-max-2tb",
+        title: "iPhone 17 Pro Max 2TB temně modrá",
+        category: "Telefony & Wearables",
+        icon: "smartphone",
+        badge: "iOS Vlajka",
+        note: "Hlavní mobilní telefon a náhradní 4K kamera s 2TB úložištěm pro ProRes záznam.",
+        colorGradient: "from-blue-700/20 to-indigo-900/20"
+      },
+      {
+        id: "google-pixel-11-pro-xl",
+        title: "Google Pixel 11 Pro XL 512GB Olive",
+        category: "Telefony & Wearables",
+        icon: "smartphone",
+        badge: "Android AI",
+        note: "Sekundární Android telefon pro testování aplikací, mobilní vývoj a AI funkce.",
+        colorGradient: "from-emerald-700/20 to-green-900/20"
+      },
+      {
+        id: "ipad-pro-13-m4-2tb",
+        title: "iPad Pro 13\" 2TB Cellular M4 Vesmírně černý 2024",
+        category: "Telefony & Wearables",
+        icon: "tablet",
+        badge: "OLED Tablet",
+        note: "Tablet s Tandem OLED displejem pro skicování, scénáře a přípravu videí.",
+        colorGradient: "from-slate-700/20 to-gray-900/20"
+      },
+      {
+        id: "apple-watch-ultra-3",
+        title: "Apple Watch Ultra 3 49mm Černý titan",
+        category: "Telefony & Wearables",
+        icon: "watch",
+        badge: "Titan Hodinky",
+        note: "Chytré hodinky v černém titanu s milánským tahem pro notifikace a tracking.",
+        colorGradient: "from-zinc-600/20 to-neutral-800/20"
+      },
+      {
+        id: "google-pixel-watch-5",
+        title: "Google Pixel Watch 5 45mm Obsidian",
+        category: "Telefony & Wearables",
+        icon: "watch",
+        badge: "Smartwatch",
+        note: "Chytré hodinky k Android ekosystému pro sledování fitness dat a spánku.",
+        colorGradient: "from-stone-600/20 to-zinc-900/20"
+      },
+      {
+        id: "oura-ring-5-black",
+        title: "Oura Ring 5 Black vel. 13",
+        category: "Telefony & Wearables",
+        icon: "circle-dot",
+        badge: "Prsten",
+        note: "Chytrý prsten pro kontinuální sledování spánku, tělesné regenerace a HRV.",
+        colorGradient: "from-neutral-600/20 to-slate-900/20"
+      },
+
+      // --- KONZOLE & TV (4) ---
+      {
+        id: "playstation-5-pro-2tb",
+        title: "PlayStation 5 Pro - 2TB",
+        category: "Konzole & TV",
+        icon: "gamepad-2",
+        badge: "PS5 Pro",
+        note: "Hlavní herní konzole pro exkluzivity v 60fps s vylepšeným ray-tracingem.",
+        colorGradient: "from-blue-600/20 to-sky-900/20"
+      },
+      {
+        id: "xbox-series-x-1tb",
+        title: "Xbox Series X - 1TB Carbon Black",
+        category: "Konzole & TV",
+        icon: "box",
+        badge: "Xbox",
+        note: "Herní konzole pro tituly z nabídky Xbox Game Pass a testování nových her.",
+        colorGradient: "from-emerald-600/20 to-green-900/20"
+      },
+      {
+        id: "nintendo-switch-2-mario",
+        title: "Nintendo Switch 2 + Mario Kart World",
+        category: "Konzole & TV",
+        icon: "gamepad",
+        badge: "Handheld",
+        note: "Hybridní konzole pro hraní na cestách i rychlé hraní v obýváku.",
+        colorGradient: "from-red-600/20 to-rose-900/20"
+      },
+      {
+        id: "apple-tv-4k-gen4",
+        title: "Apple TV 4K (4. generace)",
+        category: "Konzole & TV",
+        icon: "tv-2",
+        badge: "Media Center",
+        note: "Multimediální centrum pro AirPlay zrcadlení, testování obsahu a sledování YouTube.",
+        colorGradient: "from-purple-600/20 to-slate-900/20"
+      }
+    ];
+
+    // APPLICATION STATE
+    let items = [];
+    let currentCategory = 'Vše';
+    let searchQuery = '';
+
+    // DOM ELEMENTS
+    const productGrid = document.getElementById('productGrid');
+    const emptyState = document.getElementById('emptyState');
+    const categoryContainer = document.getElementById('categoryContainer');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const itemCount = document.getElementById('itemCount');
+    const totalCount = document.getElementById('totalCount');
+    const adminModal = document.getElementById('adminModal');
+    const affiliateTagInput = document.getElementById('affiliateTagInput');
+    const tagDisplay = document.getElementById('tagDisplay');
+    const urlPreview = document.getElementById('urlPreview');
+
+    // INITIALIZATION ON LOAD
+    window.onload = function() {
+      loadState();
+      renderCategoryButtons();
+      renderProducts();
+      setupEventListeners();
+      lucide.createIcons();
+    };
+
+    function loadState() {
+      const savedItems = localStorage.getItem('rthwldn_gear_items_v3');
+      const savedParams = localStorage.getItem('rthwldn_affiliate_params');
+      
+      if (savedItems) {
+        try {
+          items = JSON.parse(savedItems);
+        } catch(e) {
+          items = [...DEFAULT_GEAR_ITEMS];
+        }
+      } else {
+        items = [...DEFAULT_GEAR_ITEMS];
+      }
+
+      if (savedParams) {
+        AFFILIATE_PARAMS = savedParams;
+      }
+
+      if (affiliateTagInput) affiliateTagInput.value = AFFILIATE_PARAMS;
+      if (tagDisplay) tagDisplay.innerText = AFFILIATE_PARAMS;
+      totalCount.innerText = items.length;
+      updateUrlPreview();
+    }
+
+    function saveState() {
+      localStorage.setItem('rthwldn_gear_items_v3', JSON.stringify(items));
+      localStorage.setItem('rthwldn_affiliate_params', AFFILIATE_PARAMS);
+      totalCount.innerText = items.length;
+      if (tagDisplay) tagDisplay.innerText = AFFILIATE_PARAMS;
+      renderProducts();
+      updateUrlPreview();
+    }
+
+    /* ====================================================================
+       AFFILIATE URL BUILDER FUNCTION (CRITICAL HELPER)
+       Handles merging ? vs & cleanly depending on existing query strings
+       ==================================================================== */
+    function buildAlzaUrl(item) {
+      let baseUrl = item.customUrl;
+      if (!baseUrl) {
+        baseUrl = `https://www.alza.cz/search.htm?exps=${encodeURIComponent(item.title)}`;
+      }
+      
+      let params = AFFILIATE_PARAMS.trim();
+      if (!params) return baseUrl;
+
+      // Ensure proper lead character (? vs &)
+      const hasQuery = baseUrl.includes('?');
+
+      if (params.startsWith('?')) {
+        if (hasQuery) {
+          params = '&' + params.substring(1);
+        }
+      } else if (params.startsWith('&')) {
+        if (!hasQuery) {
+          params = '?' + params.substring(1);
+        }
+      } else {
+        params = (hasQuery ? '&' : '?') + params;
+      }
+      
+      return baseUrl + params;
+    }
+
+    function updateUrlPreview() {
+      if (urlPreview && items.length > 0) {
+        urlPreview.innerText = buildAlzaUrl(items[0]);
+      }
+    }
+
+    function setupEventListeners() {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        clearSearchBtn.classList.toggle('hidden', searchQuery === '');
+        renderProducts();
+      });
+
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.classList.add('hidden');
+        renderProducts();
+      });
+    }
+
+    // CATEGORIES RENDER
+    function renderCategoryButtons() {
+      const categories = ['Vše', 'PC & Workstation', 'Monitory & Periferie', 'Audio & Streaming', 'Telefony & Wearables', 'Konzole & TV'];
+      
+      categoryContainer.innerHTML = categories.map(cat => {
+        const isActive = cat === currentCategory;
+        const count = cat === 'Vše' ? items.length : items.filter(i => i.category === cat).length;
+        
+        const activeClass = isActive 
+          ? 'bg-alza text-white shadow-lg shadow-alza/20 border-alza font-bold' 
+          : 'bg-dark-card text-gray-400 hover:text-white border-dark-border hover:bg-dark-cardHover font-medium';
+
+        return `
+          <button onclick="setCategory('${cat}')" 
+                  class="px-3.5 py-1.5 rounded-xl text-xs border transition-all duration-200 whitespace-nowrap flex items-center gap-2 ${activeClass}">
+            <span>${cat}</span>
+            <span class="px-1.5 py-0.5 rounded-md text-[10px] font-mono ${isActive ? 'bg-black/30 text-white' : 'bg-dark-bg text-gray-500'}">
+              ${count}
+            </span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      renderCategoryButtons();
+      renderProducts();
+    }
+
+    function resetFilters() {
+      currentCategory = 'Vše';
+      searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      renderCategoryButtons();
+      renderProducts();
+    }
+
+    // PRODUCTS RENDER
+    function renderProducts() {
+      const filtered = items.filter(item => {
+        const matchesCategory = (currentCategory === 'Vše') || (item.category === currentCategory);
+        const matchesSearch = !searchQuery || 
+          item.title.toLowerCase().includes(searchQuery) ||
+          item.category.toLowerCase().includes(searchQuery) ||
+          item.note.toLowerCase().includes(searchQuery) ||
+          (item.badge && item.badge.toLowerCase().includes(searchQuery));
+
+        return matchesCategory && matchesSearch;
+      });
+
+      itemCount.innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        productGrid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      productGrid.innerHTML = filtered.map(item => {
+        const finalAlzaUrl = buildAlzaUrl(item);
+        const iconName = item.icon || 'box';
+        const gradientClass = item.colorGradient || 'from-emerald-600/20 to-teal-800/20';
+
+        return `
+          <div class="group bg-dark-card border border-dark-border hover:border-alza/50 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-alza-glow relative">
+            
+            <!-- Card Visual Banner -->
+            <div>
+              <div class="relative h-36 w-full bg-gradient-to-br ${gradientClass} border-b border-dark-border/60 flex items-center justify-center p-6 overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-white/5 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
+                
+                <div class="relative z-10 w-14 h-14 rounded-2xl bg-dark-bg/80 border border-white/10 backdrop-blur-md flex items-center justify-center text-alza group-hover:scale-110 group-hover:border-alza/40 transition-all duration-300 shadow-lg">
+                  <i data-lucide="${iconName}" class="w-7 h-7"></i>
+                </div>
+
+                <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-black/70 backdrop-blur-md text-gray-300 border border-white/10">
+                    ${item.category}
+                  </span>
+                  ${item.badge ? `
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-alza/20 backdrop-blur-md text-alza border border-alza/30">
+                      ${item.badge}
+                    </span>
+                  ` : ''}
+                </div>
+
+                <button onclick="copyProductLink('${finalAlzaUrl}')" title="Zkopírovat odkaz" 
+                        class="absolute top-3 right-3 p-2 rounded-lg bg-black/50 hover:bg-alza text-gray-400 hover:text-white backdrop-blur-md transition-colors">
+                  <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+
+              <!-- Card Content -->
+              <div class="p-5">
+                <h3 class="text-base font-bold text-white group-hover:text-alza transition-colors leading-snug mb-2">
+                  ${item.title}
+                </h3>
+
+                <p class="text-xs text-gray-300 leading-relaxed bg-dark-bg/70 p-3 rounded-xl border border-dark-border/80">
+                  <span class="text-alza font-semibold">Poznámka:</span> ${item.note}
+                </p>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="p-5 pt-0">
+              <a href="${finalAlzaUrl}" target="_blank" rel="noopener noreferrer" 
+                 class="w-full py-2.5 px-4 bg-alza hover:bg-alza-hover text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-md shadow-alza/20 transition-all duration-200 group/btn">
+                <span>Koupit na Alza.cz</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+              </a>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function copyProductLink(url) {
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Odkaz zkopírován do schránky!');
+      }).catch(() => {
+        showToast('Odkaz zkopírován.');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // MODAL CONTROL
+    function openAdminModal() {
+      updateUrlPreview();
+      adminModal.classList.remove('hidden');
+    }
+
+    function closeAdminModal() {
+      adminModal.classList.add('hidden');
+    }
+
+    function saveAffiliateTag() {
+      const newTag = affiliateTagInput.value.trim();
+      AFFILIATE_PARAMS = newTag;
+      saveState();
+      showToast(`Affiliate kód uložen: ${newTag}`);
+    }
+
+    function handleAddItem(e) {
+      e.preventDefault();
+      const title = document.getElementById('newTitle').value.trim();
+      const category = document.getElementById('newCategory').value;
+      const note = document.getElementById('newNote').value.trim();
+      const customUrl = document.getElementById('newUrl').value.trim();
+
+      const newItem = {
+        id: 'item-' + Date.now(),
+        title: title,
+        category: category,
+        icon: "box",
+        badge: "Nové",
+        note: note,
+        customUrl: customUrl || null,
+        colorGradient: "from-emerald-600/20 to-teal-800/20"
+      };
+
+      items.unshift(newItem);
+      saveState();
+      showToast('Produkt byl úspěšně přidán!');
+      document.getElementById('addItemForm').reset();
+    }
+
+    function resetToDefaultData() {
+      if (confirm("Opravdu chcete obnovit výchozích 33 produktů ze seznamu?")) {
+        items = [...DEFAULT_GEAR_ITEMS];
+        AFFILIATE_PARAMS = "?idp=9530&banner_id=44903";
+        if (affiliateTagInput) affiliateTagInput.value = AFFILIATE_PARAMS;
+        saveState();
+        showToast('Obnoveno výchozích 33 produktů.');
+      }
+    }
+  </script>
+</body>
+</html>
