@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="cs" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rthwldn GEAR | Oficiální Hardwarová Výbava</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FACC15',
+              hover: '#EAB308',
+              dim: 'rgba(250, 204, 21, 0.1)',
+              border: 'rgba(250, 204, 21, 0.2)'
+            },
+            dark: {
+              bg: '#0A0A0B',
+              surface: '#111114',
+              card: '#16161A',
+              border: '#1F1F23',
+              borderHover: '#2E2E35',
+              muted: '#71717A',
+              subtle: '#27272A'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0A0A0B;
+      color: #F4F4F5;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3F3F46;
+    }
+
+    .glass-nav {
+      background: rgba(10, 10, 11, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .card-glow:hover {
+      box-shadow: 0 0 25px -5px rgba(250, 204, 21, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-yellow selection:text-black">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-dark-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- BRAND LOGO -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-brand-yellow flex items-center justify-center font-extrabold text-black text-xl tracking-tighter shadow-lg shadow-brand-yellow/10 transition-transform group-hover:scale-105">
+          R
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold tracking-wider text-lg text-white font-mono uppercase">rthwldn</span>
+            <span class="text-[10px] font-mono bg-brand-dim text-brand-yellow px-2 py-0.5 rounded border border-brand-border uppercase font-bold tracking-widest">GEAR</span>
+          </div>
+          <p class="text-xs text-dark-muted hidden sm:block">Oficiální technická výbava a studiový hardware</p>
+        </div>
+      </a>
+
+      <!-- SOCIAL & SUPPORT LINKS -->
+      <div class="flex items-center gap-3">
+        <!-- YouTube Link -->
+        <a href="https://www.youtube.com/@rthwldn" target="_blank" rel="noopener noreferrer" 
+           class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-dark-card hover:bg-dark-borderHover border border-dark-border text-xs font-medium text-zinc-300 hover:text-white transition-all duration-200">
+          <svg class="w-4 h-4 text-red-500 fill-current" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span class="hidden sm:inline">YouTube</span>
+        </a>
+
+        <!-- Forendors Link -->
+        <a href="https://www.forendors.cz/rthwldn" target="_blank" rel="noopener noreferrer" 
+           class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-dark-card hover:bg-dark-borderHover border border-dark-border text-xs font-medium text-zinc-300 hover:text-white transition-all duration-200">
+          <svg class="w-4 h-4 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span>Forendors</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- HERO SECTION -->
+    <section class="mb-10 text-center sm:text-left flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-dark-border">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dim border border-brand-border text-brand-yellow text-xs font-mono font-semibold uppercase tracking-wider mb-4">
+          <span class="w-2 h-2 rounded-full bg-brand-yellow animate-pulse"></span>
+          Studiové & Produkční Vybavení
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
+          Hardware & Setup <span class="text-brand-yellow">rthwldn</span>
+        </h1>
+        <p class="text-dark-muted text-sm sm:text-base leading-relaxed">
+          Kompletní přehled přesné výbavy používané pro tvorbu obsahu, vývoj, audio/video produkci a streamování. Kliknutím na produkt získáte přímý odkaz na Alza.cz.
+        </p>
+      </div>
+
+      <!-- QUICK STATS -->
+      <div class="flex items-center justify-center sm:justify-start gap-4 font-mono">
+        <div class="bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-center min-w-[110px]">
+          <div class="text-2xl font-bold text-white" id="total-count-badge">34</div>
+          <div class="text-[11px] text-dark-muted uppercase tracking-wider mt-0.5">Produktů</div>
+        </div>
+        <div class="bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-center min-w-[110px]">
+          <div class="text-2xl font-bold text-brand-yellow">6</div>
+          <div class="text-[11px] text-dark-muted uppercase tracking-wider mt-0.5">Kategorií</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH & FILTER CONTROLS -->
+    <section class="mb-8 space-y-4">
+      <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        
+        <!-- SEARCH BAR -->
+        <div class="relative flex-grow max-w-md">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-dark-muted">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input 
+            type="text" 
+            id="search-input"
+            placeholder="Hledat podle názvu..." 
+            class="w-full pl-10 pr-10 py-2.5 bg-dark-surface border border-dark-border focus:border-brand-yellow rounded-xl text-sm text-white placeholder-dark-muted focus:outline-none transition-all duration-200"
+          >
+          <button id="clear-search" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-dark-muted hover:text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- RESULT COUNT BADGE -->
+        <div class="text-xs text-dark-muted font-mono flex items-center justify-between md:justify-end gap-2">
+          <span>Zobrazeno: <strong id="visible-count" class="text-white">34</strong> / 34</span>
+        </div>
+      </div>
+
+      <!-- CATEGORY PILLS -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="category-filters">
+        <!-- JS inserts filter buttons here -->
+      </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section>
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- NO RESULTS PLACEHOLDER -->
+      <div id="no-results" class="hidden text-center py-16 bg-dark-surface border border-dark-border rounded-2xl">
+        <svg class="w-12 h-12 text-dark-muted mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" stroke-width="1.5"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="1.5"></line>
+        </svg>
+        <h3 class="text-lg font-semibold text-white mb-1">Žádné produkty nenalezeny</h3>
+        <p class="text-sm text-dark-muted">Zkus upravit vyhledávání nebo zvolit jinou kategorii.</p>
+        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-dark-card hover:bg-dark-border border border-dark-border text-xs text-brand-yellow font-medium rounded-lg transition-colors">
+          Vynulovat filtry
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 border-t border-dark-border bg-dark-surface py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        
+        <div>
+          <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+            <span class="font-bold text-white font-mono uppercase">rthwldn</span>
+            <span class="text-xs text-dark-muted">• Všechna práva vyhrazena</span>
+          </div>
+          <!-- AFFILIATE DISCLOSURE NOTE (MANDATORY CZECH TEXT) -->
+          <p class="text-xs text-dark-muted max-w-xl leading-relaxed">
+            Stránka obsahuje affiliate odkazy na Alza.cz. Nákupem přes tyto odkazy podpoříš tvorbu kanálu rthwldn bez navýšení ceny.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button onclick="openJsonModal()" class="px-3 py-2 rounded-lg bg-dark-card hover:bg-dark-border border border-dark-border text-xs font-mono text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+            <svg class="w-3.5 h-3.5 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+            Export JSON Data
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON MODAL -->
+  <div id="json-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-dark-surface border border-dark-border rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
+      <div class="flex items-center justify-between mb-4 border-b border-dark-border pb-3">
+        <h3 class="text-lg font-bold text-white font-mono flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-yellow"></span>
+          Katalog - JSON Data (34 položek)
+        </h3>
+        <button onclick="closeJsonModal()" class="text-dark-muted hover:text-white text-xl">✕</button>
+      </div>
+      <textarea id="json-content" readonly class="w-full h-80 bg-dark-bg border border-dark-border rounded-xl p-3 font-mono text-xs text-zinc-300 focus:outline-none resize-none mb-4"></textarea>
+      <div class="flex justify-end gap-3">
+        <button onclick="copyJsonToClipboard()" id="copy-json-btn" class="px-4 py-2 bg-brand-yellow text-black font-bold text-xs rounded-lg hover:bg-brand-hover transition-colors">
+          Kopírovat do schránky
+        </button>
+        <button onclick="closeJsonModal()" class="px-4 py-2 bg-dark-card border border-dark-border text-white font-medium text-xs rounded-lg hover:bg-dark-border">
+          Zavřít
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION LOGIC & DATA -->
+  <script>
+    // EXACT 34 PRODUCTS SPECIFIED BY USER - NO PRICES, NO STOCK STATUS, DIRECT ALZA AFFILIATE LINKS
+    const PRODUCTS_DATA = [
+      {
+        id: 1,
+        name: 'Blackmagic Pocket Cinema Camera 4K',
+        category: 'Kamery & Studio',
+        icon: 'camera-cine'
+      },
+      {
+        id: 2,
+        name: 'MacBook Pro 14" M5 CZ 2025 Vesmírně černý',
+        category: 'PC & Workstation',
+        icon: 'laptop'
+      },
+      {
+        id: 3,
+        name: '27" Apple Studio Display - Standard Glass - Stojan s nastavitelným náklonem',
+        category: 'Monitory & Periferie',
+        icon: 'display'
+      },
+      {
+        id: 4,
+        name: 'Kingston FURY 64GB KIT DDR5 6000MT/s CL30 Beast Black EXPO',
+        category: 'PC & Workstation',
+        icon: 'ram'
+      },
+      {
+        id: 5,
+        name: 'ASUS TUF GAMING GT502 HORIZON TG ARGB BLACK',
+        category: 'PC & Workstation',
+        icon: 'pc-case'
+      },
+      {
+        id: 6,
+        name: 'Oura Ring 5 Black vel. 13',
+        category: 'Telefony & Wearables',
+        icon: 'ring'
+      },
+      {
+        id: 7,
+        name: 'Apple TV 4K (4. generace)',
+        category: 'Konzole & TV',
+        icon: 'apple-tv'
+      },
+      {
+        id: 8,
+        name: 'ASUS PRIME GeForce RTX 5070 Ti O16G',
+        category: 'PC & Workstation',
+        icon: 'gpu'
+      },
+      {
+        id: 9,
+        name: 'Intel Core Ultra 7 265K',
+        category: 'PC & Workstation',
+        icon: 'cpu'
+      },
+      {
+        id: 10,
+        name: 'Apple Watch Ultra 3 49mm Černý titan s černým titanovým milánským tahem - L',
+        category: 'Telefony & Wearables',
+        icon: 'watch'
+      },
+      {
+        id: 11,
+        name: 'MSI MPG MT201DRG 17"- 35"',
+        category: 'Monitory & Periferie',
+        icon: 'monitor-arm'
+      },
+      {
+        id: 12,
+        name: '27" AOC Q27G41ZDF',
+        category: 'Monitory & Periferie',
+        icon: 'display'
+      },
+      {
+        id: 13,
+        name: 'SteelSeries Rival Pro Wireless Black',
+        category: 'Monitory & Periferie',
+        icon: 'mouse'
+      },
+      {
+        id: 14,
+        name: 'Nintendo Switch 2 + Mario Kart World',
+        category: 'Konzole & TV',
+        icon: 'switch'
+      },
+      {
+        id: 15,
+        name: 'Apple Magic Trackpad 2024 - Bílý',
+        category: 'Monitory & Periferie',
+        icon: 'trackpad'
+      },
+      {
+        id: 16,
+        name: 'Apple Magic Keyboard 2024 s Touch ID, bílé klávesy - CZ',
+        category: 'Monitory & Periferie',
+        icon: 'keyboard'
+      },
+      {
+        id: 17,
+        name: 'Elgato Wave Mic Arm High Rise MK.2',
+        category: 'Audio & Streaming',
+        icon: 'mic-arm'
+      },
+      {
+        id: 18,
+        name: 'Elgato Cam Link 4K',
+        category: 'Kamery & Studio',
+        icon: 'dongle'
+      },
+      {
+        id: 19,
+        name: 'Elgato Prompter',
+        category: 'Kamery & Studio',
+        icon: 'prompter'
+      },
+      {
+        id: 20,
+        name: 'Elgato 4K Pro',
+        category: 'Kamery & Studio',
+        icon: 'capture-card'
+      },
+      {
+        id: 21,
+        name: 'Elgato Game Capture 4K X',
+        category: 'Kamery & Studio',
+        icon: 'capture-box'
+      },
+      {
+        id: 22,
+        name: 'iPad Pro 13" 2TB Cellular M4 Vesmírně černý 2024',
+        category: 'Telefony & Wearables',
+        icon: 'tablet'
+      },
+      {
+        id: 23,
+        name: 'Shure SM7dB',
+        category: 'Audio & Streaming',
+        icon: 'mic'
+      },
+      {
+        id: 24,
+        name: 'RODECaster Pro II',
+        category: 'Audio & Streaming',
+        icon: 'mixer'
+      },
+      {
+        id: 25,
+        name: 'iPhone 17 Pro Max 2TB temně modrá',
+        category: 'Telefony & Wearables',
+        icon: 'phone'
+      },
+      {
+        id: 26,
+        name: 'Elgato Stream Deck +',
+        category: 'Audio & Streaming',
+        icon: 'stream-deck'
+      },
+      {
+        id: 27,
+        name: 'EDIFIER MR5 černé',
+        category: 'Audio & Streaming',
+        icon: 'speakers'
+      },
+      {
+        id: 28,
+        name: 'ASUS ROG Azoth Extreme (ROG NX Snow / PBT) - US',
+        category: 'Monitory & Periferie',
+        icon: 'keyboard-mech'
+      },
+      {
+        id: 29,
+        name: 'Google Pixel Watch 5 45mm Obsidian',
+        category: 'Telefony & Wearables',
+        icon: 'watch'
+      },
+      {
+        id: 30,
+        name: 'Google Pixel 11 Pro XL 512GB Olive',
+        category: 'Telefony & Wearables',
+        icon: 'phone'
+      },
+      {
+        id: 31,
+        name: 'Xbox Series X - 1TB Carbon Black',
+        category: 'Konzole & TV',
+        icon: 'xbox'
+      },
+      {
+        id: 32,
+        name: 'PlayStation 5 Pro - 2TB',
+        category: 'Konzole & TV',
+        icon: 'ps5'
+      },
+      {
+        id: 33,
+        name: '32" GIGABYTE AORUS FO32U2P',
+        category: 'Monitory & Periferie',
+        icon: 'display'
+      },
+      {
+        id: 34,
+        name: 'Mac Studio M4 MAX',
+        category: 'PC & Workstation',
+        icon: 'mac-studio'
+      }
+    ];
+
+    // AFFILIATE PARAMS
+    const AFFILIATE_IDP = '9530';
+    const AFFILIATE_BANNER_ID = '44903';
+
+    function getAlzaAffiliateUrl(productName) {
+      const encoded = encodeURIComponent(productName);
+      return `https://www.alza.cz/search.htm?exps=${encoded}&idp=${AFFILIATE_IDP}&banner_id=${AFFILIATE_BANNER_ID}`;
+    }
+
+    // STATE
+    let currentCategory = 'Vše';
+    let searchQuery = '';
+
+    // SVG GENERATOR FOR EACH PRODUCT TYPE
+    function getProductSvg(iconType) {
+      const svgs = {
+        'camera-cine': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/><circle cx="9" cy="12" r="3"/><path d="M6 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>`,
+        'laptop': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/><path d="M9 16v1h6v-1"/></svg>`,
+        'display': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>`,
+        'ram': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="9" rx="1"/><path d="M6 15v3m4-3v3m4-3v3m4-3v3"/><path d="M5 9h14"/></svg>`,
+        'pc-case': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="6" r="1.5"/><circle cx="12" cy="14" r="3"/><path d="M8 22h8"/></svg>`,
+        'ring': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="5"/><path d="M12 4v3m0 10v3"/></svg>`,
+        'apple-tv': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="3"/><path d="M9 11l2 2 4-4"/></svg>`,
+        'gpu': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="11" rx="2"/><circle cx="8" cy="10.5" r="2.5"/><circle cx="16" cy="10.5" r="2.5"/><path d="M6 16v3m12-3v3"/></svg>`,
+        'cpu': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3m6-3v3m-9 6H2m3 6H2m7 3v3m6-3v3m6-9h3m-3-6h3"/></svg>`,
+        'watch': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="5" width="12" height="14" rx="4"/><path d="M9 2h6v3H9zm0 17h6v3H9z"/><circle cx="12" cy="12" r="3"/></svg>`,
+        'monitor-arm': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21h6m-3 0V10m0 0l6-4 5 3"/><rect x="15" y="4" width="7" height="6" rx="1"/></svg>`,
+        'mouse': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 3v5"/></svg>`,
+        'switch': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="5" width="10" height="14" rx="1"/><rect x="2" y="5" width="4" height="14" rx="2"/><rect x="18" y="5" width="4" height="14" rx="2"/><circle cx="4" cy="9" r="1"/><circle cx="20" cy="11" r="1"/></svg>`,
+        'trackpad': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 14h18"/></svg>`,
+        'keyboard': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h12"/></svg>`,
+        'mic-arm': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h4m-2 0v-6l8-8 6 3"/><circle cx="18" cy="8" r="2"/></svg>`,
+        'dongle': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="8" width="12" height="12" rx="2"/><path d="M10 4h4v4h-4z"/></svg>`,
+        'prompter': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16l-2 10H6L4 4z"/><rect x="7" y="14" width="10" height="6" rx="1"/></svg>`,
+        'capture-card': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h3v4H7zM14 10h3v4h-3z"/></svg>`,
+        'capture-box': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="3"/><circle cx="8" cy="12" r="1.5"/><path d="M13 12h3"/></svg>`,
+        'tablet': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="3"/><circle cx="12" cy="18" r="0.5"/></svg>`,
+        'mic': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 17v4m-4 0h8"/></svg>`,
+        'mixer': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8v8m5-8v8m5-8v8M5 11h4m1 3h4m1-5h4"/></svg>`,
+        'phone': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="3"/><line x1="10" y1="5" x2="14" y2="5"/></svg>`,
+        'stream-deck': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="6" y="6" width="3" height="3" rx="0.5"/><rect x="10.5" y="6" width="3" height="3" rx="0.5"/><rect x="15" y="6" width="3" height="3" rx="0.5"/><rect x="6" y="10.5" width="3" height="3" rx="0.5"/><rect x="10.5" y="10.5" width="3" height="3" rx="0.5"/><rect x="15" y="10.5" width="3" height="3" rx="0.5"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>`,
+        'speakers': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="15" r="3.5"/></svg>`,
+        'keyboard-mech': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M5 9h2v2H5zm4 0h2v2H9zm4 0h2v2h-2zm4 0h2v2h-2zM5 13h14v2H5z"/></svg>`,
+        'xbox': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="7" r="2"/><path d="M8 14s2-2 4-2 4 2 4 2"/></svg>`,
+        'ps5': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3c2 4 2 14 0 18h12c-2-4-2-14 0-18H6z"/><ellipse cx="12" cy="12" rx="2" ry="4"/></svg>`,
+        'mac-studio': `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="2"/><circle cx="12" cy="12" r="1"/><path d="M4 14h16"/></svg>`
+      };
+
+      return svgs[iconType] || `<svg class="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="4"/></svg>`;
+    }
+
+    // INITIALIZATION & CATEGORY BUILDER
+    function init() {
+      setupCategories();
+      renderProducts();
+      setupEventListeners();
+    }
+
+    function getCategoriesWithCounts() {
+      const counts = { 'Vše': PRODUCTS_DATA.length };
+      PRODUCTS_DATA.forEach(p => {
+        counts[p.category] = (counts[p.category] || 0) + 1;
+      });
+      return counts;
+    }
+
+    function setupCategories() {
+      const categoryContainer = document.getElementById('category-filters');
+      const counts = getCategoriesWithCounts();
+      
+      const categories = [
+        'Vše',
+        'Kamery & Studio',
+        'PC & Workstation',
+        'Monitory & Periferie',
+        'Audio & Streaming',
+        'Telefony & Wearables',
+        'Konzole & TV'
+      ];
+
+      categoryContainer.innerHTML = categories.map(cat => {
+        const count = counts[cat] || 0;
+        const isActive = cat === currentCategory;
+        return `
+          <button 
+            onclick="setCategory('${cat}')"
+            class="px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all duration-200 border flex items-center gap-2 ${
+              isActive 
+                ? 'bg-brand-yellow text-black border-brand-yellow font-bold shadow-md shadow-brand-yellow/10' 
+                : 'bg-dark-surface text-zinc-300 border-dark-border hover:border-dark-borderHover hover:text-white'
+            }"
+          >
+            <span>${cat}</span>
+            <span class="px-1.5 py-0.2 text-[10px] rounded-full font-mono ${
+              isActive ? 'bg-black/20 text-black' : 'bg-dark-card text-dark-muted'
+            }">${count}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      setupCategories();
+      renderProducts();
+    }
+
+    function setupEventListeners() {
+      const searchInput = document.getElementById('search-input');
+      const clearBtn = document.getElementById('clear-search');
+
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        if (searchQuery.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+        renderProducts();
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        clearBtn.classList.add('hidden');
+        renderProducts();
+      });
+    }
+
+    function resetFilters() {
+      currentCategory = 'Vše';
+      searchQuery = '';
+      document.getElementById('search-input').value = '';
+      document.getElementById('clear-search').classList.add('hidden');
+      setupCategories();
+      renderProducts();
+    }
+
+    // RENDER PRODUCTS
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const noResults = document.getElementById('no-results');
+      const visibleCountElem = document.getElementById('visible-count');
+
+      const filtered = PRODUCTS_DATA.filter(product => {
+        const matchesCategory = (currentCategory === 'Vše') || (product.category === currentCategory);
+        const matchesSearch = searchQuery === '' || product.name.toLowerCase().includes(searchQuery);
+        return matchesCategory && matchesSearch;
+      });
+
+      visibleCountElem.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(product => {
+        const affiliateUrl = getAlzaAffiliateUrl(product.name);
+        const svgIllustration = getProductSvg(product.icon);
+
+        return `
+          <div class="bg-dark-surface border border-dark-border rounded-xl p-5 flex flex-col justify-between hover:border-dark-borderHover transition-all duration-300 card-glow group">
+            <div>
+              <!-- CARD TOP: TECHNICAL ILLUSTRATION HEADER -->
+              <div class="w-full h-32 bg-dark-card border border-dark-border rounded-lg mb-4 flex items-center justify-center p-4 relative overflow-hidden group-hover:border-brand-border transition-colors">
+                <!-- SUBTLE GRID BACKGROUND IN CANVAS -->
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                <div class="relative z-10 transition-transform duration-300 group-hover:scale-110">
+                  ${svgIllustration}
+                </div>
+              </div>
+
+              <!-- CATEGORY TAG -->
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-mono font-semibold uppercase tracking-wider text-brand-yellow bg-brand-dim border border-brand-border px-2 py-0.5 rounded">
+                  ${product.category}
+                </span>
+                <span class="text-[10px] font-mono text-dark-muted">#${String(product.id).padStart(2, '0')}</span>
+              </div>
+
+              <!-- PRODUCT TITLE -->
+              <h3 class="text-sm font-bold text-white group-hover:text-brand-yellow transition-colors line-clamp-2 mb-4 leading-snug">
+                ${product.name}
+              </h3>
+            </div>
+
+            <!-- ACTION BUTTON (NO PRICE / NO STOCK STATUS) -->
+            <div class="pt-2">
+              <a 
+                href="${affiliateUrl}" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-full py-2.5 px-4 bg-brand-yellow hover:bg-brand-hover text-black font-bold text-xs rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-brand-yellow/20 active:scale-[0.98]"
+              >
+                <span>Koupit na Alza.cz</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // JSON EXPORT MODAL FUNCTIONS
+    function openJsonModal() {
+      const modal = document.getElementById('json-modal');
+      const textarea = document.getElementById('json-content');
+      
+      // Clean JSON representation
+      const exportData = PRODUCTS_DATA.map(p => ({
+        id: p.id,
+        name: p.name,
+        category: p.category,
+        alza_url: getAlzaAffiliateUrl(p.name)
+      }));
+
+      textarea.value = JSON.stringify(exportData, null, 2);
+      modal.classList.remove('hidden');
+    }
+
+    function closeJsonModal() {
+      document.getElementById('json-modal').classList.add('hidden');
+    }
+
+    function copyJsonToClipboard() {
+      const textarea = document.getElementById('json-content');
+      textarea.select();
+      document.execCommand('copy');
+
+      const btn = document.getElementById('copy-json-btn');
+      const originalText = btn.textContent;
+      btn.textContent = 'Zkopírováno!';
+      btn.classList.remove('bg-brand-yellow');
+      btn.classList.add('bg-green-500', 'text-white');
+
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.classList.remove('bg-green-500', 'text-white');
+        btn.classList.add('bg-brand-yellow');
+      }, 2000);
+    }
+
+    // RUN ON LOAD
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
